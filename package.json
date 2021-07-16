@@ -1,0 +1,8 @@
+{
+  "name": "hm-indypool",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": "David, Shin (@highmaru)",
+  "license": "GPL-3",
+  "private": true
+}
