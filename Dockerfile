@@ -15,7 +15,7 @@ ADD --chown=indy:indy . $HOME
 RUN mkdir -p \
     $HOME/cli-scripts \
     && chmod -R ug+rw $HOME/cli-scripts
-
+VOLUME ["/home/indy/ledger"]
 # FROM node:12.18-alpine
 # ENV NODE_ENV=production
 # WORKDIR /usr/src/app

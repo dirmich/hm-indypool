@@ -77,7 +77,7 @@ else
     ipsArg="$DOCKERHOST"
     # ,"$DOCKERHOST","$DOCKERHOST","$DOCKERHOST"
 fi
-fi
+
 
 echo -e \\n\\n"================================================================================================"
 echo -e "Generating genesis transaction file:"

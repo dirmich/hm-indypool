@@ -218,6 +218,7 @@ class AnchorHandle:
             raise AnchorException("Error creating pool configuration") from e
 
         try:
+            LOGGER.info("open %s, %s",pool_name,json.dumps(pool_cfg))
             self._pool = await pool.open_pool_ledger(pool_name, json.dumps(pool_cfg))
         except IndyError as e:
             raise AnchorException("Error opening pool ledger connection") from e

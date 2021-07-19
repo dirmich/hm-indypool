@@ -1,0 +1,29 @@
+version: '3.4'
+
+services:
+  did-agent:
+    image: dirmich/hm-did-agent:latest
+    container_name: did-agent
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    # command: 'bash -c ''./scripts/start_node.sh 1; && sleep 10; ./scripts/start_webserver.sh;'''
+    command: 'bash -c ./bin/bootstrap.sh'
+    networks:
+      - did-network
+    ports:
+      - 8051:8001
+      - 8151:80
+    environment:     
+      AGENT_NAME: DIDAgent
+      ACAPY_ENDPOINT: http://did-agent      
+      WEBHOOK_URL: https://testcentersp.margin.ga
+      GENESIS_URL: https://margin.ga/genesis
+      WALLET_KEY: qwerty123
+    # volumes:
+    #   - ./ledger:/home/indy/ledger:rw
+
+networks:
+  did-network:
+
+# volumes:

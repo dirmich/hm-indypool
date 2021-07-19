@@ -7,12 +7,14 @@ services:
     build:
       context: .
       dockerfile: ./Dockerfile
-    command: 'bash -c ''./scripts/start_node.sh 1; sleep 10; ./scripts/start_webserver.sh;'''
+    # command: 'bash -c ''./scripts/start_node.sh 1; && sleep 10; ./scripts/start_webserver.sh;'''
+    command: './scripts/start_node.sh 1'
+    command: './scripts/start_webserver.sh'
     networks:
       - did-network
     ports:
-      - 9701:3001
-      - 9702:3002
+      - 3001:3001
+      - 3002:3002
       - ${WEB_SERVER_HOST_PORT:-9000}:8000
     environment:
       - IP=${IP}
@@ -33,7 +35,8 @@ services:
       - INFO_SITE_TEXT=${INFO_SITE_TEXT}
       - INFO_SITE_URL=${INFO_SITE_URL}
     volumes:
-      - ledger:/home/indy/ledger
+      # - ledger:/home/indy/ledger
+      - ./ledger:/home/indy/ledger:rw
       - ./config:/home/indy/config
       - ./server:/home/indy/server
       - webserver-cli:/home/indy/.indy-cli
@@ -91,4 +94,9 @@ networks:
 
 volumes:
   webserver-cli:
-  ledger:
+  # ledger:
+  #   driver: local
+  #   driver_opts:
+  #     o: bind
+  #     type: none
+  #     device: ./ledger

@@ -1,0 +1,2 @@
+{"reqSignature":{},"txn":{"data":{"dest":"V4SGRU86Z58d6TV7PBUe6f","role":"0","verkey":"~CoRER63DVYnWZtK8uAzNbx"},"metadata":{},"type":"1"},"txnMetadata":{"seqNo":1},"ver":"1"}
+{"reqSignature":{},"txn":{"data":{"dest":"Th7MpTaRZVRYnPiabds81Y","role":"2","verkey":"~7TYfekw4GUagBnBVCqPjiC"},"metadata":{"from":"V4SGRU86Z58d6TV7PBUe6f"},"type":"1"},"txnMetadata":{"seqNo":2},"ver":"1"}

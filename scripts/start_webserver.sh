@@ -2,6 +2,8 @@
 
 set -e
 
+sleep 10
+
 if [ ! -f "/home/indy/ledger/sandbox/pool_transactions_genesis" ] && [ -z "${GENESIS_URL}" ] && [ -z "${GENESIS_FILE}" ]; then
   echo "Ledger does not exist - Creating genesis data..."
 	if [ ! -z "$IPS" ]; then
