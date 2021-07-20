@@ -1,0 +1,13 @@
+{
+  "name": "hm_webhook",
+  "version": "0.0.1",
+  "description": "Webhook for aries-framework",
+  "main": "index.js",
+  "author": "David, Shin(dirmich@gmail.com)",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  }
+}
