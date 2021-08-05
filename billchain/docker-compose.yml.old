@@ -1,0 +1,73 @@
+version: "3"
+services:
+  billchain:
+    image: dirmich/hm-did-agent:latest
+    command: /bin/bash -c "./startup.sh"
+    container_name: billchain
+    ports:
+      - 8051:8001
+      - 8151:8000
+    environment:
+      AGENT_NAME: BillChain
+      ACAPY_ENDPOINT: https://billchainapi.margin.ga
+      GENESIS_URL: https://margin.ga/genesis
+      WEBHOOK_URL: http://192.168.0.2:8080/wallet/billchain
+      WALLET_KEY: hmwallet1
+    volumes:
+      - ./bootstrap/startup_single.sh:/home/indy/startup.sh
+    networks:
+      - highmaru-backend
+  user:
+    image: dirmich/hm-did-agent:latest
+    command: /bin/bash -c "./startup.sh"
+    container_name: user
+    ports:
+      - 8052:8001
+      - 8152:8000
+    environment:
+      AGENT_NAME: User
+      ACAPY_ENDPOINT: https://userapi.margin.ga
+      GENESIS_URL: https://margin.ga/genesis
+      WEBHOOK_URL: http://192.168.0.2:8080/wallet/user
+      WALLET_KEY: hmwallet2
+    volumes:
+      - ./bootstrap/startup_single.sh:/home/indy/startup.sh
+    networks:
+      - highmaru-backend
+  gateway:
+    image: dirmich/hm-did-agent:latest
+    command: /bin/bash -c "./startup.sh"
+    container_name: gateway
+    ports:
+      - 8053:8001
+      - 8153:8000
+    environment:
+      AGENT_NAME: Gateway
+      ACAPY_ENDPOINT: https://gatewayapi.margin.ga
+      GENESIS_URL: https://margin.ga/genesis
+      WEBHOOK_URL: http://192.168.0.2:8080/wallet/gateway
+      WALLET_KEY: hmwallet3
+    volumes:
+      - ./bootstrap/startup_multi.sh:/home/indy/startup.sh
+    networks:
+      - highmaru-backend
+  cp:
+    image: dirmich/hm-did-agent:latest
+    command: /bin/bash -c "./startup.sh"
+    container_name: cp
+    ports:
+      - 8054:8001
+      - 8154:8000
+    environment:
+      AGENT_NAME: Contents Provider
+      ACAPY_ENDPOINT: https://cpapi.margin.ga
+      GENESIS_URL: https://margin.ga/genesis
+      WEBHOOK_URL: http://192.168.0.2:8080/wallet/cp
+      WALLET_KEY: hmwallet4
+    volumes:
+      - ./bootstrap/startup_single.sh:/home/indy/startup.sh
+    networks:
+      - highmaru-backend
+networks:
+  highmaru-backend:
+    external: true

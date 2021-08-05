@@ -23,5 +23,5 @@ if [ ! -d "/home/indy/ledger/sandbox/keys" ]; then
 fi
 
 
-echo start_indy_node "Node""$NODE_NUM" $HOST $NODE_PORT $HOST $(( NODE_PORT + 1 ))
-start_indy_node "Node""$NODE_NUM" $HOST $NODE_PORT $HOST $(( NODE_PORT + 1 ))
+echo start_indy_node "$NODE_NAME" $HOST $NODE_PORT $HOST $(( NODE_PORT + 1 ))
+start_indy_node "$NODE_NAME" $HOST $NODE_PORT $HOST $(( NODE_PORT + 1 ))

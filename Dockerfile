@@ -10,11 +10,15 @@ ADD server/requirements.txt server/
 RUN pip install --no-cache-dir -r server/requirements.txt
 
 ADD --chown=indy:indy indy_config.py /etc/indy/
-ADD --chown=indy:indy . $HOME
+ADD --chown=indy:indy ./bin $HOME/bin
+ADD --chown=indy:indy ./cli-scripts $HOME/cli-scripts
+ADD --chown=indy:indy ./scripts $HOME/scripts
+ADD --chown=indy:indy ./config $HOME/config
 
 RUN mkdir -p \
     $HOME/cli-scripts \
     && chmod -R ug+rw $HOME/cli-scripts
+
 VOLUME ["/home/indy/ledger"]
 # FROM node:12.18-alpine
 # ENV NODE_ENV=production

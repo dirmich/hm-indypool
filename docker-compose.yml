@@ -19,6 +19,7 @@ services:
     environment:
       - IP=${IP}
       - IPS=${IPS}
+      - NODE_NAME="Node01"
       - NODE_PORT=3001
       - DOCKERHOST=${DOCKERHOST}
       - LOG_LEVEL=${LOG_LEVEL}
