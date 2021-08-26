@@ -5,3 +5,5 @@ IP=3.36.94.8 GENESIS_URL=https://margin.ga/genesis docker-compose up -d
 
 [amazon linux에서 publicIP 찾기]
 curl http://checkip.amazonaws.com
+
+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

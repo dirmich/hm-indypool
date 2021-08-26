@@ -37,8 +37,9 @@ ledger node target=C5kGvXEZCpubAnpk7NTLXBXCUJn3HuHBtasU5vfsKNMw client_port=3002
 4. did new seed=000000000000000000000000Trustee1 did=V4SGRU86Z58d6TV7PBUe6f
 5. did use V4SGRU86Z58d6TV7PBUe6f
 6. did new seed={random seed} // did new seed=000000000000000000000000NewNode1 // MLH5EAmQUTEcvNUv3Hp75G,{verkey}
-7. ledger nym did=MLH5EAmQUTEcvNUv3Hp75G verkey=~PfXwyFj4CCkPPXe2wajtUy
-8. did use MLH5EAmQUTEcvNUv3Hp75G
+7. ledger nym did=MLH5EAmQUTEcvNUv3Hp75G verkey=~PfXwyFj4CCkPPXe2wajtUy role=STEWARD
+8. ledger nym did=MLH5EAmQUTEcvNUv3Hp75G role=STEWARD
+9. did use MLH5EAmQUTEcvNUv3Hp75G
 9. ledger node target=C5kGvXEZCpubAnpk7NTLXBXCUJn3HuHBtasU5vfsKNMw client_port=3002 client_ip=3.36.94.8 alias=NewNode1 node_ip=3.36.94.8 node_port=3001 services=VALIDATOR blskey=3PwvnD3z3eDjYitAvcWRd2tPaQfKNrdPNeDRiEWLJbvJh3LJefwV6hj2LKrBRPNS35Jtc2zgVCX7dHJPM24P8kSP9iMCjmvn3FfCwhYDYE8T6ac2YtjEiuU3mE73ZKf7KkTopvUnsEY2i4N6Ce7E6ZDvzAG5Z1EYQt1j3jPz3AZv91D blskey_pop=RS8iyeFQ2gBjeZ9FWSfSAG9MxAj5zR31mtDr84ZdCRcKKWTrveZDo9Ggx9xUK7zdcJNYHwbAJwmZHzXv4v6ebKGmYM5ipB78qHmMcctHSZVxiR3Tn7QAYNT94STVymH3nXwbzM2PMgXVtNQdYSTn2JUmcG5gMbn4EawvTQUhhwh8XR
 
 #  ledger nym did=MLH5EAmQUTEcvNUv3Hp75G role=STEWARD

@@ -70,11 +70,17 @@ fi
 
 if [ ! -z $ipAddresses ]; then
     ipsArg="$ipAddresses"
+    NCOUNT=$(echo $IPS|tr ',' ' '|wc -w)
+    CCOUNT=$((NCOUNT+1))
 elif [ ! -z $ipAddress ]; then
     ipsArg="$ipAddress"
+    NCOUNT=1
+    CCOUNT=0
     # ,"$ipAddress","$ipAddress","$ipAddress"
 else
     ipsArg="$DOCKERHOST"
+    NCOUNT=1
+    CCOUNT=0
     # ,"$DOCKERHOST","$DOCKERHOST","$DOCKERHOST"
 fi
 
@@ -83,19 +89,21 @@ echo -e \\n\\n"=================================================================
 echo -e "Generating genesis transaction file:"
 echo -e "nodeArg: ${nodeArg}"
 echo -e "ipAddresses: ${ipsArg}"
+echo -e "nodes: ${NCOUNT}"
+echo -e "clients: ${CCOUNT}"
 echo -e "genesisFilePath: ${genesisFilePath}"
 echo -e "------------------------------------------------------------------------------------------------"
 # Use supplied IP address
 echo -e generate_indy_pool_transactions \
-    --nodes 1 \
-    --clients 0 \
+    --nodes $NCOUNT \
+    --clients $CCOUNT \
     $nodeArg \
     --ips "$ipsArg" \
     \\n
 
 generate_indy_pool_transactions \
-    --nodes 1 \
-    --clients 0 \
+    --nodes $NCOUNT \
+    --clients $CCOUNT \
     $nodeArg \
     --ips "$ipsArg"
 
